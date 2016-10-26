@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Slashman</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- jQuery Mobile -->
+   	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+        <!-- Buttons styling from Unicorn UI -->
+        <!-- http://unicorn-ui.com/buttons/ -->
+		<link rel="stylesheet" type="text/css" href="http://unicorn-ui.com/buttons/css/buttons.css">
+        <!-- Animation classes from Daniel Eden -->
+        <!-- http://daneden.github.io/animate.css/ -->
+        <link rel="stylesheet" type="text/css" href="css/animate.css">
+        <!-- Font icons from https://icomoon.io/ -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- Personal stylesheet aimed to correct some of default jQuery CSS parameters -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!-- jQuery Mobile -->
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+
+        <!-- Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body>
+
+		<!-- The first page where we can search for the products and get the basic information about them -->
+		<div data-role="page" id="to_choose">
+			<div role="main" class="ui-content">
+				<div class="logo animated bounceIn">SLASH/MAN</div>
+
+				<div class="search-box">
+					<div class="xxx">
+                        <!-- A simple search bar where the user can input the product code manually and search for it -->
+						<input type="number" name="search-1" class="search-1" id="search-1" value="">
+						<div class="image-upload">
+						    <label for="shoot">
+						        <div class="icon-camera"></div>
+						    </label>
+                            <!-- This input is alternative to search bar and calling the camera on mobile phone or file explorer on computer -->
+						    <input id="shoot" type="file" accept="image/*;capture=camera" />
+						</div>
+					</div>
+					<div class="text-center">
+                        <!-- Submission button is only for manual search -->
+						<a href="" id="search-1-btn" class="button button-3d button-action button-pill"><span class="icon-search"></span></a>
+					</div>
+				</div>
+                <!-- After the image is taken, it is inserted in the canvas from which the barcode is scanned by a complex algorithm -->
+                <!-- Scanned barcode value is then send by AJAX to back-end (PHP) -->
+				<canvas id="barcode_image"></canvas>
+				<p id="error_scan"></p>
+                <!-- This div is kind of the main view, where all product objects (results from the database) are inserted -->
+				<div id="view"></div>
+			</div>
+		</div>
+
+		<!-- This is the mobile page where we can create/edit the product by assigning ID, Name, Origin, Description and take (upload) a photo -->
+		<div data-role="page" id="to_edeate">
+			<div role="main" class="ui-content">
+				<form id="submit-form" enctype="multipart/form-data" action="php/set.php" method="POST">
+					<div class="text-center">
+						<a href="" id="back" data-rel="back" class="button button-primary button-circle button-small" data-transition="slidedwon"><span class="icon-chevron"></span></a>
+					</div>
+					<label for="textinput-2">Code:</label>
+					<input type="text" name="id" id="edit-barcode-code" readonly="true">
+					<label for="textinput-2">Product name:</label>
+					<input type="text" id="name" name="name" value="">
+					<label for="textinput-2">Origin:</label>
+					<input type="text" id="origin" name="origin" value="">
+					<label for="textarea-2">Description:</label>
+					<textarea cols="40" id="description" rows="20" name="description"></textarea>
+					<label for="shoot_save">
+                        <div class="icon-camera2"></div>
+                        <p>TAKE A PICTURE</p>
+					</label>
+                    <!-- Here we use the same plugin, but in a simpler way allowing it just to upload the camera photo -->
+					<input id="shoot_save" type="file" name="file" id="file" accept="image/*;capture=camera" /><br>
+					<canvas id="save_image"></canvas>
+					<p id="error_scan_2"></p>
+					<div class="text-center">
+                        <!-- After submitting the button a new product object is created and inserted into database -->
+                        <!-- On top of that, the user is automatically redirected to the first page -->
+						<a href="#" id="send" class="button button-raised button-action button-circle button-jumbo animated bounce"><span class="icon-checkmark"></span></a>
+					</div>
+				</form>
+			</div>
+		</div>
+
+        <!-- jQuery Mobile -->
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+        <script src="http://malsup.github.com/jquery.form.js"></script>
+
+        <!-- Barcode scanner JavaScript plugin by EddieLA -->
+        <!-- https://github.com/EddieLa/JOB -->
+		<script src="js/decoder.js"></script>
+		<script src="js/job.js"></script>
+		<script src="js/exif.js"></script>
+        <!-- This file is edited a little bit to fit the application goal -->
+		<script src="js/scanner.js"></script>
+
+        <!-- Main application front-end logic -->
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
