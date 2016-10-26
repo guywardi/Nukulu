@@ -1,0 +1,224 @@
+html, body {
+    height : 100%;
+}
+
+.ui-content {
+    margin: 0 auto; 
+    padding: 2%;
+    max-width: 800px;
+}
+
+a {
+	text-decoration: none;
+	box-shadow: none;
+}
+
+canvas#barcode_image, canvas#save_image {
+	visibility: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+div.img-cont {
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+body, input, .ui-btn {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #3b3b3b;
+}
+
+div.logo {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 1.75em;
+	color: #3b3b3b;
+	text-align: center;
+	padding: 10px 0;
+	letter-spacing: -2px;
+	text-shadow: -2px -2px #aaa;
+}
+
+div.image-upload {
+	text-align: center;
+}
+
+input#shoot, input#shoot_save
+{
+    display: none;
+    border: 0;
+}
+
+.ui-input-text {
+    border: 0;
+}
+
+.ui-focus {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+input.search-1 {
+	border: 1px solid #ddd;
+	padding: 0.55em;
+    letter-spacing: -1px;
+    font-size: 1.1em;
+}
+
+div.xxx {
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+}
+
+input#shoot {
+    border: 1px solid #ddd;
+    border-right: none;
+    float: left;
+}
+
+div.image-upload {
+    float: right;
+    height: 10px;
+    width: 15px;
+    border-left: none;
+    position: absolute;
+    top: 3px;
+    right: 32px;
+}
+
+div.search-box {
+	border-bottom: 1px dashed #ddd;
+}
+
+/*
+a.mybutton {
+	background: #3498DB;
+	color: #fff;
+	border: none;
+	padding: 8px 70px;
+	border-radius: 5px;
+}
+*/
+
+div.text-center {
+	text-align: center;
+	margin: 20px 0;
+}
+
+div.img-cont {
+	text-align: center;
+    margin-bottom: 20px;
+}
+
+div.img-cont img {
+	max-width: 100%;
+}
+
+.theme-group-header .state-default .corner-all .state-hover:hover{
+   background:none !important;
+}
+
+.ui-page-theme-a a:visited, html .ui-bar-a a:visited, html .ui-body-a a:visited, html body .ui-group-theme-a a:visited {
+	color: #fff !important;
+}
+
+a.edeat {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 0.95em;
+	letter-spacing: -1px;
+	font-weight: 700;
+	color: #3b3b3b;
+	margin: 30px 0;
+}
+
+h1.name {
+	font-weight: 700;
+	font-size: 2em;
+	letter-spacing: -2px;
+	text-align: center;
+	text-shadow: 0px 0px 1px #ddd;
+	line-height: 0.975;
+    text-transform: uppercase;
+}
+
+.ui-content {
+	height: 100%;
+}
+
+.ui-table-columntoggle-btn {
+    display: none !important;
+}
+
+table {
+	margin: 0 auto;
+}
+
+table.phone-compare th {
+    background-color: #fff;
+}
+
+table.phone-compare th.label {
+    text-transform: uppercase;
+    font-size: 0.6em;
+    opacity: 0.5;
+    padding: 1.2em 1em;
+    background-color: #ddd;
+    text-align: left;
+}
+
+table.phone-compare tr td {
+    padding: 0.7em;
+    font-size: 0.95em;
+    letter-spacing: -1px;
+}
+
+textarea.ui-input-text { height: 200px }
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+
+a:hover, html .ui-bar-a a:hover, html .ui-body-a a:hover, html body .ui-group-theme-a a:hover {
+    color: #fff !important;
+}
+
+.ui-page-theme-a a:hover, html .ui-bar-a a:hover, html .ui-body-a a:hover, html body .ui-group-theme-a a:hover {
+    color: #fff !important;
+}
+
+.ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a {
+    color: #fff;
+    font-weight: 700;
+}
+
+.error {
+	text-align: center;
+}
+
+#description {
+	resize: none;
+}
+
+label[for=shoot_save] {
+    text-align: center;
+    border: 1px dashed #3b3b3b;
+    margin: 25px auto 0;
+    display: block;
+    padding: 5px 0;
+    width: 40%;
+}
+
+label[for=shoot_save] p {
+    letter-spacing: -1px;
+    margin-bottom: 0;
+}
